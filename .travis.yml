@@ -1,6 +1,6 @@
-os: 
- - linux
- - osx
+language: 
+ - android
+ - objective-c
 
 stages:
   - node-build
