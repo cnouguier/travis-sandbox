@@ -4,13 +4,13 @@ node_js:
 matrix:
   include:
     - script:
-        - echo 'script matrix 1'
-        after_script:
-        - echo 'after script matrix 1'
+      - echo 'script matrix 1'
+     - after_script:
+      - echo 'after script matrix 1'
     - script:
-        - echo 'script matrix 2'
-      after_script:
-        - echo 'after script matrix 2'
+      - echo 'script matrix 2'
+    - after_script:
+      - echo 'after script matrix 2'
 script:
   - echo 'script global'
 after_script:
