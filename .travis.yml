@@ -7,6 +7,6 @@ matrix:
       - echo 'script matrix 1'
     - script:
       - echo 'script matrix 2'
-script:
+after_script:
   - echo 'script global'
   
