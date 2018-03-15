@@ -1,6 +1,9 @@
-os:
- - linux
- - osx
+matrix:
+  include:
+   - os: linux
+     language: node_js
+   - os: osx
+     language: node_js
 
 jobs:
   include:
