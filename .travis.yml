@@ -1,14 +1,13 @@
 language: node_js
 node_js:
   - "8"
+script:
+  - echo 'script global'
+after_script:
+  - echo 'After script global'
 matrix:
   include:
     - script:
       - echo 'script matrix 1'
     - script:
       - echo 'script matrix 2'
-script:
-  - echo 'script global'
-after_script:
-  - echo 'After script global'
-  
