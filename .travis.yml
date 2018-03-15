@@ -3,9 +3,9 @@ node_js:
   - "8"
 matrix:
   include:
-    script:
+    - script:
       - echo 'script matrix 1'
-    script:
+    - script:
       - echo 'script matrix 2'
 script:
   - echo 'script global'
