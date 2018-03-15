@@ -4,10 +4,9 @@ os:
 
 stages:
   - node-build
-  - cordova-build
+  - test
   - deploy
 
-stage: cordova-build
 script echo $TRAVIS_OS_NAME
 
 jobs:
