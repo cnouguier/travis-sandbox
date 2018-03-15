@@ -1,18 +1,8 @@
+
 stages:
   - node-build
   - cordova-build
-  - deploy
-
-stage: cordova-build
-script: echo $TRAVIS_OS_NAME
-
-jobs:
-  include:
-    - stage: node-build
-      script: echo 'building node...'
-    - stage: deploy
-      script: echo 'deploying...'
-      
+  
 matrix:
   include:
     - os: linux
@@ -20,12 +10,22 @@ matrix:
       jdk: oraclejdk8
       android:
         components:
-          - tools
-          - platform-tools
-          - tools
-          - build-tools-27.0.2
-          - android-27
-          - extra
+        - tools
+        - platform-tools
+        - tools
+        - build-tools-27.0.2
+        - android-27
+        - extra
     - os: osx
       language: objective-c
       osx_image: xcode8.3
+
+stage: cordova-build
+script: echo $TRAVIS_OS_NAME
+
+jobs:
+  include:
+    - stage: node-build
+      script: 
+      - echo 'building node...'
+      - echo $TRAVIS_OS_NAME     
