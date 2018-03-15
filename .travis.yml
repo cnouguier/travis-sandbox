@@ -1,18 +1,34 @@
 
-os: 
-  - linux
-  - osx
-  
 stages:
   - node-build
-  - cordova-build
-
-stage: node-build
-script: echo $TRAVIS_OS_NAME
+  - android-build
+  - ios-build
 
 jobs:
   include:
-    - stage: cordova-build
+    - stage: node-build
+      language: node_js
+      node_js:
+        - "8"
       script: 
       - echo 'building node...'
       - echo $TRAVIS_OS_NAME     
+    - stage: android-build
+      language: android
+      android:
+        components:
+        - tools
+        - platform-tools
+        - tools
+        - build-tools-27.0.2
+        - android-27
+        - extra
+      script: 
+      - echo 'building node...'
+      - echo $TRAVIS_OS_NAME         
+    - stage: ios-build
+      language: objective-c
+      osx_image: xcode8.3
+      script: 
+      - echo 'building node...'
+      - echo $TRAVIS_OS_NAME  
