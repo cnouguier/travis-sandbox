@@ -25,11 +25,12 @@ matrix:
       language: objective-c
       osx_image: xcode8.3
 
+stage: node-build
 script: echo $TRAVIS_OS_NAME
 
 jobs:
   include:
-    - stage: node-build
+    - stage: cordova-build
       script: 
       - echo 'building node...'
       - echo $TRAVIS_OS_NAME     
