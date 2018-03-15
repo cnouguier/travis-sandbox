@@ -1,9 +1,9 @@
-matrix:
-  include:
-   - os: linux
-     language: node_js
-   - os: osx
-     language: node_js
+os: 
+ - linux
+ - osx
+
+stage: Common
+script: echo $TRAVIS_OS_NAME
 
 jobs:
   include:
