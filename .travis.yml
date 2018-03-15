@@ -1,12 +1,12 @@
 
 stages:
-  - node-build
-  - android-build
-  - ios-build
+  - NODE
+  - ANDROID
+  - IOS
 
 jobs:
   include:
-    - stage: node-build
+    - stage: NODE
       language: node_js
       node_js:
         - "8"
@@ -16,7 +16,7 @@ jobs:
       - echo $TRAVIS_OS_NAME
       - node --version
       
-    - stage: android-build
+    - stage: ANDROID
       language: android
       android:
         components:
@@ -36,7 +36,7 @@ jobs:
         - echo $TRAVIS_OS_NAME
         - cordova --version
       
-    - stage: ios-build
+    - stage: IOS
       language: objective-c
       osx_image: xcode8.3
       before_install:
