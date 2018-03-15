@@ -3,4 +3,9 @@
 # travis-sandbox
 A Travis CI sand box to practice 
 
-[] Matrix test
+https://docs.travis-ci.com/user/getting-started/
+
+Build matrix
+
+https://docs.travis-ci.com/user/customizing-the-build/#Build-Matrix
+
