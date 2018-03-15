@@ -4,10 +4,14 @@ node_js:
 script:
   - echo 'script global'
 after_script:
-  - echo 'After script global'
+  - echo $FOO
 matrix:
   include:
     - script:
-      - echo 'script matrix 1'
+        - echo 'script matrix 1'
+      env:
+        - FOO=foo
     - script:
-      - echo 'script matrix 2'
+        - echo 'script matrix 2'
+      env:
+        - FOO=bar
