@@ -7,6 +7,7 @@ stages:
   - cordova-build
   - deploy
 
+stage: cordova-build
 script echo $TRAVIS_OS_NAME
 
 jobs:
