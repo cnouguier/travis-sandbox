@@ -1,14 +1,8 @@
-matrix:
-  include:
-    - os: linux
-      dist: trusty
-      sudo: required
-      script:
-        - echo 'linux'
-    - os: osx
-      osx_image: xcode7.2 
-      script: 
-        - echo 'hello ios'
+os:
+ - linux
+ - osx
+
+script: echo $TRAVIS_OS_NAME
 
 jobs:
   include:
