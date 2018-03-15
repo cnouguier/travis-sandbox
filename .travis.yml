@@ -9,6 +9,6 @@ jobs:
       script: echo 'building...'
     - stage: Deploy
       script: echo $TRAVIS_OS_NAME
-      script echo 'deploying...'
+      script: echo 'deploying...'
       
 
