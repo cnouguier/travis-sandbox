@@ -4,12 +4,17 @@ matrix:
       dist: trusty
       sudo: required
       script:
-        - echo 'build'
-      stage: deploy
-        script:
-          - echo 'deploy'
+        - echo 'linux'
     - os: osx
       osx_image: xcode7.2 
       script: 
         - echo 'hello ios'
-    
+
+jobs:
+  include:
+    - stage: Build
+      script: echo 'building...'
+    - stage: Deploy
+      script: echo 'deploying..'
+      
+
