@@ -4,10 +4,7 @@ os:
 
 stage: Common
 script: echo $TRAVIS_OS_NAME
-
-jobs:
-  include:
-    - stage: Build
-      script: echo $TRAVIS_OS_NAME
-    - stage: Deploy
-      script: echo $TRAVIS_OS_NAME
+stage: Build
+script: echo $TRAVIS_OS_NAME
+stage: Deploy
+script: echo $TRAVIS_OS_NAME
