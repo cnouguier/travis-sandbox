@@ -1,26 +1,23 @@
 
-os: linux
-
+os: 
+  - os: linux
+    language: android
+    jdk: oraclejdk8
+    android:
+      components:
+      - tools
+      - platform-tools
+      - tools
+      - build-tools-27.0.2
+      - android-27
+      - extra
+  - os: osx
+    language: objective-c
+    osx_image: xcode8.3
+  
 stages:
   - node-build
   - cordova-build
-  
-matrix:
-  include:
-    - os: linux
-      language: android
-      jdk: oraclejdk8
-      android:
-        components:
-        - tools
-        - platform-tools
-        - tools
-        - build-tools-27.0.2
-        - android-27
-        - extra
-    - os: osx
-      language: objective-c
-      osx_image: xcode8.3
 
 stage: node-build
 script: echo $TRAVIS_OS_NAME
