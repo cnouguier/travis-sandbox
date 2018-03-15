@@ -1,17 +1,12 @@
-language: node_js
-node_js:
-  - "8"
-script:
-  - echo 'script global'
-after_script:
-  - echo $FOO
 matrix:
   include:
-    - script:
-        - echo 'script matrix 1'
-      env:
-        - FOO=foo
-    - script:
-        - echo 'script matrix 2'
-      env:
-        - FOO=bar
+    - os: linux
+      dist: trusty
+      sudo: required
+      script:
+        - echo 'hello linux'
+    - os: osx
+      osx_image: xcode7.2 
+      script: 
+        - echo 'hello ios'
+    
